@@ -1,0 +1,34 @@
+引入相关的包
+import numpy as np
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot
+import sklearn
+
+加载数据
+data=pd.read_csv(".\data\r_hwl.csv",delimiter='\t')
+print(data)
+
+准备数据
+x=np.c_[data['x']]
+y=np.c_[data['y']]
+
+可视化数据
+data.plot(kind="scatter",x="x",y="y")
+plt.show()
+
+选择一个模型进行训练
+from sklearn import linear_model
+lr_modl=linear_modl.LinearRegression()
+lr_modl.fit(x,y)
+print("斜率:%s,截距:%s"%(lr_modl.coef_[0][0],lr_modl.intercept_[0]))
+print("估计模型为:y=%sx+%sy"%(lr_modl.coef_[0][0],lr_modl.intercept_[0]))
+
+画出拟合线
+data.plot(king="scatter",x="x",y="y")
+plt.plot(x,lr_model.predict(x,reshape(-1,1)),color='red',linewidth=4)
+plt.show()
+
+对于新的问题进行预测
+x_new=[[14]]
+print(lr_model.predict(x_new))
