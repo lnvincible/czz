@@ -1,0 +1,48 @@
+package 银行ATM;
+
+import java.util.Scanner;
+
+import javax.swing.text.StyledEditorKit.BoldAction;
+import javax.xml.soap.Text;
+
+public class ATM1 
+{
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		for (int i = 1; i <= 3; i++) 
+		{
+			System.out.println("请输入密码：");
+		    String n=new Scanner(System.in).next();
+		    
+			if (n.equals("123"))
+			{
+				break;
+			}else if(i<3)
+			{
+				System.err.println("您还有"+(3-i)+"次机会");
+			}
+	     }
+		System.out.println("请输入金额数：");
+		
+	   int z=1;
+	    do {
+	    	
+	       int c=new Scanner(System.in).nextInt();
+	       int zf=c % 100;
+	       
+	       
+			if ((zf==0)) 
+			{
+			System.out.println("取款金额"+c);
+			
+			break;
+			}else {
+				
+			System.out.println("金额有误,请重新输入");
+			}
+		} while (z!=0);
+		System.out.print("取款成功");
+      }
+}
